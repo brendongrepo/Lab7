@@ -10,24 +10,30 @@ import java.util.Arrays;
  *  6) Prints an integer array in a formatted style.
  *
  * @author Brendon Grepo, bgrepo@student.sdccd.edu
- * @version v1.0
- * @since 11/1/2025
+ * @version v1.1
+ * @since 11/9/2025
  */
 public class ArrayMethods {
     //instance field
     private int[] myArray = {7, 8, 8, 3, 4, 9, 8, 7};
 
+    /**
+     * Default constructor that initializes the array used for all method
+     * operations in this class. The values are preset.
+     */
+    public ArrayMethods(){
+    }
     //methods
     /**
      * Counts how many elements are in myArray using an enhanced for loop.
      * @return the number of elements in the array
      */
     public int count() {
-        int cnt = 0;
-        for (int ignored : myArray) {
-            cnt++;
+        int elementCount = 0;
+        for (int ignoredElement : myArray) {
+            elementCount++;
         }
-        return cnt;
+        return elementCount;
     }
 
     /**
@@ -35,11 +41,11 @@ public class ArrayMethods {
      * @return the sum of the array elements
      */
     public int sum() {
-        int s = 0;
-        for (int v : myArray) {
-            s += v;
+        int runningSum = 0;
+        for (int value : myArray) {
+            runningSum += value;
         }
-        return s;
+        return runningSum;
     }
 
     /**
@@ -55,11 +61,13 @@ public class ArrayMethods {
      * @return the maximum value
      */
     public int findMax() {
-        int max = myArray[0];
-        for (int v : myArray) {
-            if (v > max) max = v;
+        int maxValue = myArray[0];
+        for (int value : myArray) {
+            if (value > maxValue) {
+                maxValue = value;
+            }
         }
-        return max;
+        return maxValue;
     }
 
     /**
@@ -68,11 +76,13 @@ public class ArrayMethods {
      * @return the index of the maximum value
      */
     public int findIndexOfMax() {
-        int idx = 0;
-        for (int i = 1; i < myArray.length; i++) {
-            if (myArray[i] > myArray[idx]) idx = i;
+        int maxIndex = 0;
+        for (int index = 1; index < myArray.length; index++) {
+            if (myArray[index] > myArray[maxIndex]) {
+                maxIndex = index;
+            }
         }
-        return idx;
+        return maxIndex;
     }
 
     /**
